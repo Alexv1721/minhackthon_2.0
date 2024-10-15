@@ -1,5 +1,3 @@
-let k = [];
-let isstart=false
 const cats = [
     "general_knowledge",
   "film_and_tv",
@@ -20,8 +18,6 @@ setTimeout(()=>{
     document.getElementById('apierror').innerText='Network Error please check your internet'
 },5000)
 }
-
-  
 const total = [];
 async function fetchData() {
   for (let i of cats) {
@@ -46,16 +42,6 @@ if(total.length==0){
 }
 
 
-
-
-
-
-
-
-
-
-
-
   function shuffle(array) {
     for (var i = array.length - 1; i >= 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -65,8 +51,6 @@ if(total.length==0){
     }
 }
 
-
-//variables 
 let win=false
 let p1score=0
 let p2score=0
@@ -136,7 +120,8 @@ function handleEnd(){
 function handlegame(q = 0) {
     if (q > catquestion.length - 1) {
         handleEnd(); 
-    } else {
+    } 
+    else {
         const main = document.getElementById('main');
         const ans = [...catquestion[q].ans]; 
         const qs = catquestion[q].qs; 
@@ -155,7 +140,9 @@ s=playerone.score
        }
         main.innerHTML = `
             <div>
+       
              <p class="pname" id="pname">Name:${p} <br/> <br/> <span class="score" id="score"> Score:${s}</span></p>
+                  <div class="nosel" id="nosel"></div>
                 <p>${qs} (${diff})</p>
                 <div>
                     <div>${ans[0]}
@@ -181,6 +168,7 @@ function submitAnswer(q) {
 const rightans=catquestion[q].crtans
 const difficulty=catquestion[q].level
     if (selectedAnswer) {
+                document.getElementById('nosel').style.display='none'
         let s = 0;
         const value = selectedAnswer.value;
         console.log('Selected answer:', value, 'Correct answer:', rightans);
@@ -214,16 +202,12 @@ const difficulty=catquestion[q].level
 
         handlegame(q + 1);
     } else {
+    const err=document.getElementById('nosel')
+err.style.display='block'
+err.innerText='Please Select Any one of the Answer'
         console.log('No answer selected');
     }
 }
-
-
-
-
-
-
-
 
 
 
@@ -248,9 +232,8 @@ function handlename(e){
         const page1=document.getElementById('page1')
         const page2=document.getElementById('page2')
         let choosedcat=document.getElementById('catagory').value
-
         if(p1=='' || p2=='' || p1=='undefined' || p2=='undefined' || catagory==''|| catagory=='undefined' ){
-        err.innerText='All field should give'
+        err.innerText='Fill All The Fields'
         }
         else{
             err.innerText=''

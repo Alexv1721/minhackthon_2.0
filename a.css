@@ -166,3 +166,8 @@ button:hover {
 .apierror{
     display: block;
 }
+
+.nosel{
+    color: red;
+    display: none;
+}
