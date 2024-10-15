@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="a.css">
+</head>
+<body>
+
+    <div class="apierror" id="apierror">
+
+    </div>
+
+    <div class="page1" id="page1">
+        <div class="title">Triva Game</div>
+        <div id="err"></div>
+        <div class="inputs" >
+   <div class="ip">
+    <input type="text" name="" id="p1" placeholder="Player One" value="">
+    <input type="text" name="" id="p2" placeholder="Player Two" value="">
+   </div>
+   <br>
+   <center><select name="" id="catagory">
+<option value="">catagory</option>
+   </select></center>
+ <center>
+    <button class="playernamesbn" onclick="handlename()">
+        Enter The Game
+    </button>
+ </center>
+        </div>
+    </div>
+<div class="page2"  id="page2">
+<div class="title">Lets start</div>
+
+<div id="playground" class="playground">
+   
+<!--     
+    <p class="qs" id="qs">
+who is the richest man in the world?
+    </p>
+    <div class="answer" id="answer">
+    </div> -->
+    <div id="main">
+
+    </div>
+</div>
+</div>
+
+<div class="page3" id="page3">
+    <p class="p1" id="p3p1">Name:<p class="p1score" id="p1score"> </p></p>
+    <p class="p2" id="p3p2">Name:<p class="p2score" id="p2score"></p></p>
+    <p class="leading" id="leading">Name:<p class="pointdiff" id="pointdiff">Difference:</p></p>
+    <button onclick="handlePlayagain()">Play Again</button>
+    <button onclick="theend()">End</button>
+</div>
+
+<div class="lastpage" id="lastpage">
+
+</div>
+    <script src="a.js">
+        
+    </script>
+</body>
+</html>

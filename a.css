@@ -1,0 +1,168 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#p1, #p2 {
+    padding: 10px;
+    border: 2px solid #777;
+    border-radius: 5px;
+    outline: none;
+    width: 80%;
+    font-size: 16px;
+}
+
+.playernamesbn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.page1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.ip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 8px;
+    width: 100%;
+    border: 2px solid #777;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#err {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Page 2 */
+.page2, .page3, .lastpage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: none;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#main div {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.page3 p, .lastpage p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#leading, #pointdiff {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.p1, .p2 {
+    font-size: 20px;
+}
+
+.p1score, .p2score {
+    font-size: 18px;
+    color: #333;
+}
+
+.pabn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.pabn:hover {
+    background-color: #0056b3;
+}
+
+#fn, #fd {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.hidden {
+    display: none;
+}
+.apierror{
+    display: block;
+}
