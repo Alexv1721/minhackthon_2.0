@@ -9,7 +9,6 @@ const cats = [
   "science",
   "society_and_culture",
   "sport_and_leisure"
-
   ];
 function handleapierror(){    
     document.getElementById('page1').style.display='none'
@@ -243,8 +242,8 @@ function handlename(e){
             playertwo.name=p2
             cat=''
             cat=choosedcat
-            let o=document.getElementById(cat)
-            o.remove()
+            let op=document.getElementById(cat)
+            op.remove()
             playerone.catchose.push(catagory)
             playertwo.catchose.push(catagory)
             page1.style.display='none'
@@ -258,12 +257,12 @@ function handlename(e){
         items.forEach((item, index) => {
             console.log(item.category);
             
-            const easyQs = catquestion.filter(q => q.level === 'easy').length;
-            const mediumQs = catquestion.filter(q => q.level === 'medium').length;
-            const hardQs = catquestion.filter(q => q.level === 'hard').length;
+            const easy = catquestion.filter(q => q.level === 'easy').length;
+            const medium = catquestion.filter(q => q.level === 'medium').length;
+            const hard = catquestion.filter(q => q.level === 'hard').length;
         
             if (item.category === cat && catquestion.length < 6) {
-                if (easyQs < 2 && item.difficulty === 'easy') {
+                if (easy < 2 && item.difficulty === 'easy') {
                     catquestion.push({
                         id: index,
                         qs: item.question.text,
@@ -271,7 +270,7 @@ function handlename(e){
                         level: item.difficulty,
                         ans: [...item.incorrectAnswers, item.correctAnswer]
                     });
-                } else if (easyQs === 2 && mediumQs < 2 && item.difficulty === 'medium') {
+                } else if (easy === 2 && medium < 2 && item.difficulty === 'medium') {
                     catquestion.push({
                         id: index,
                         qs: item.question.text,
@@ -279,7 +278,7 @@ function handlename(e){
                         level: item.difficulty,
                         ans: [...item.incorrectAnswers, item.correctAnswer]
                     });
-                } else if (easyQs === 2 && mediumQs === 2 && hardQs < 2 && item.difficulty === 'hard') {
+                } else if (easy === 2 && medium === 2 && hard < 2 && item.difficulty === 'hard') {
                     catquestion.push({
                         id: index,
                         qs: item.question.text,
@@ -315,11 +314,38 @@ function handlename(e){
             const objs=JSON.parse(local)
             catquestion.splice(0,catquestion.length-1)
             catquestion.length=0
-            objs.forEach((item,index)=>{
-            if(item.category==catagory){
-                catquestion.push({id:index,qs:item.question.text,crtans:item.correctAnswer,level:item.difficulty,ans:[...item.incorrectAnswers,item.correctAnswer]
-                
-                })
+            objs.forEach((item, index) => {
+                console.log(item.category);
+                const easy = catquestion.filter(q => q.level === 'easy').length;
+                const medium = catquestion.filter(q => q.level === 'medium').length;
+                const hard = catquestion.filter(q => q.level === 'hard').length;
+            
+                if (item.category === cat && catquestion.length < 6) {
+                    if (easy < 2 && item.difficulty === 'easy') {
+                        catquestion.push({
+                            id: index,
+                            qs: item.question.text,
+                            crtans: item.correctAnswer,
+                            level: item.difficulty,
+                            ans: [...item.incorrectAnswers, item.correctAnswer]
+                        });
+                    } else if (easy === 2 && medium < 2 && item.difficulty === 'medium') {
+                        catquestion.push({
+                            id: index,
+                            qs: item.question.text,
+                            crtans: item.correctAnswer,
+                            level: item.difficulty,
+                            ans: [...item.incorrectAnswers, item.correctAnswer]
+                        });
+                    } else if (easy === 2 && medium === 2 && hard < 2 && item.difficulty === 'hard') {
+                        catquestion.push({
+                            id: index,
+                            qs: item.question.text,
+                            crtans: item.correctAnswer,
+                            level: item.difficulty,
+                            ans: [...item.incorrectAnswers, item.correctAnswer]
+                        });
+                    }
             console.log(catquestion);
             page1.style.display='none'
             page2.style.display='block'
