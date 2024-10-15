@@ -21,7 +21,7 @@ const total = [];
 async function fetchData() {
   for (let i of cats) {
     try {
-      const response = await fetch(`https://the-trivia-api.com/v2/questions?limit=20&categories=${i}`);
+      const response = await fetch(`https://the-trivia-api.com/v2/questions?limit=30&categories=${i}`);
       const data = await response.json();
       total.push(...data); 
     } catch (error) {
